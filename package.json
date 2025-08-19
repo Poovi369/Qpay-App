@@ -19,8 +19,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build"
   },
-  "proxy": "https://dev.expressfintech.in/",
-
   "browserslist": {
     "production": [
       ">0.2%",

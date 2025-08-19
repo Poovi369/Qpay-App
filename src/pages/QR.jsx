@@ -11,18 +11,13 @@ import qpay from '../assests/qpay-logo.png'
 
 const QR = () => {
   const [activeTab, setActiveTab] = useState('active');
-
   const statuses = [
     "QR Request Accepted",
     "Awaiting Production",
     "Awaiting Dispatch",
     "Dispatched",
   ];
-
-  // Track which dropdowns are open individually
   const [openDropdowns, setOpenDropdowns] = useState({});
-
-  // Track selected status for each dropdown
   const [selectedStatus, setSelectedStatus] = useState({});
 
   const toggleDropdown = (index) => {
@@ -31,19 +26,10 @@ const QR = () => {
       [index]: !prev[index],
     }));
   };
-
-  const handleSelect = (index, status) => {
-    setSelectedStatus((prev) => ({
-      ...prev,
-      [index]: status,
-    }));
-  };
-
   return (
     <div className={styles.wrap}>
       <h2>Manage QR/POS</h2>
       <div className={styles.container}>
-        {/* QR Area */}
         <div className={styles.qrArea}>
           <div>
             <img src={qpay} height="70px" alt="Logo" />
@@ -52,8 +38,6 @@ const QR = () => {
             <img
               src={qrlogo}
               alt="QR-Image"
-              height="300px"
-              width="500px"
             />
           </div>
           <div className={styles.meta}>
@@ -75,8 +59,6 @@ const QR = () => {
             </button>
           </div>
         </div>
-
-        {/* QR List / Requests */}
         <div className={styles.list}>
           <div className={styles.tabHeader}>
             <button
@@ -132,7 +114,7 @@ const QR = () => {
                           <div className={styles.itemId}>All Marketing Sales</div>
                           <div className={styles.itemDetails}>
                             <p>45, Bharathi Nagar, VOC Port Authority,Tuticorin, 628004.</p>
-                            <div className={styles.itemstyle}>Terminal 3</div>
+                            <div className={styles.itemstyle}>Requested on 26.04.2025</div>
                           </div>
                         </div>
                       </div>
@@ -144,7 +126,7 @@ const QR = () => {
                         onClick={() => toggleDropdown(index)}
                       >
                         <input
-                          type="radio"
+                          type="Checkbox"
                           checked={selectedStatus[index] === undefined ? true : false}
                           readOnly
                           className={styles.radioInput}
@@ -163,10 +145,9 @@ const QR = () => {
                               <div
                                 key={sIndex}
                                 className={styles.dropdownItem}
-                                onClick={() => handleSelect(index, status)}
                               >
                                 <input
-                                  type="radio"
+                                  type="Checkbox"
                                   checked={selectedStatus[index] === status}
                                   readOnly
                                   className={styles.radioInput}

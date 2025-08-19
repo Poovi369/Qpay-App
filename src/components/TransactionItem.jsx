@@ -7,7 +7,6 @@ const TransactionItem = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
-  // Pagination logic
   const totalPages = Math.ceil(data.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentItems = data.slice(startIndex, startIndex + itemsPerPage);
@@ -51,7 +50,6 @@ const TransactionItem = ({ data }) => {
         </tbody>
       </table>
 
-      {/* Pagination */}
       <div className="pagination">
         <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
           &lt;

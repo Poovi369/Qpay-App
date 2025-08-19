@@ -1,19 +1,65 @@
-.wrap{
-  display:flex;
-  flex-direction:column;
-  gap:18px;
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  overflow-x: hidden; 
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* New 4-card grid */
+.topBanner {
+  background: linear-gradient(90deg, var(--green), #58a05f);
+  color: white;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.belowBanner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.firstItem {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.firstItem strong{
+  color: white;
+}
+
+.secondItem {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.thirdItem {
+  color: #81d49a;
+}
+
+.btn {
+  background: white;
+  color: var(--green);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+}
 .cardGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
   margin-top: 8px;
 }
-
-/* Equal height clickable cards */
 .infoCard {
   background: rgb(218, 229, 218);
   border: 1px solid var(--border, #e7e7e7);
@@ -45,8 +91,6 @@
   justify-content: space-between;
   margin-bottom: 10px;
 }
-
-/* Circular outlined icon container */
 .iconCircle {
   width: 60px;
   height: 60px;
@@ -60,20 +104,17 @@
   background: #2e6f3e;
 }
 
-/* Icon itself */
 .icons{
   font-size: 40px;
   color:rgb(228, 228, 228);
 }
 
-/* Slightly raised arrow */
 .arrow {
   font-size: 18px;
   color: #2e6f3e;
   transform: translateY(-2px);
 }
 
-/* Text rows */
 .cardTitle {
   font-weight: 700;
   color: #2e6f3e;
@@ -90,7 +131,6 @@
   font-family:Arial, Helvetica, sans-serif;
 }
 
-/* Container: two cards side-by-side, equal height/width */
 .wrapper {
   display: flex;
   gap: 16px;
@@ -99,10 +139,8 @@
   margin: 16px 0;
   flex-wrap: nowrap;
 }
-
-/* Card */
 .card {
-  flex: 1 1 0; /* equal width */
+  flex: 1 1 0;
   background: #ffffff;
   border: 1px solid #e6e6e6;
   border-radius: 12px;
@@ -150,7 +188,6 @@
   background: white;
 }
 
-/* Icon style */
 .icon {
   font-size: 30px;
   color:#51a767;
@@ -163,7 +200,7 @@
   line-height: 1.5;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow:ellipsis;
 }
 
 @media (max-width: 780px) {

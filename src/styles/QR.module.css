@@ -1,18 +1,3 @@
-/* .wrap{display:flex;flex-direction:column;gap:12px; flex-shrink: 0;}
-.container{display:flex;gap:16px}
-.qrArea{flex:1;background:white;padding:18px;border-radius:8px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center}
-.qrLarge{width:260px;height:260px;background:#f2f2f2;border-radius:8px;display:flex;align-items:center;justify-content:center}
-.meta{margin-top:12px;color:var(--muted)}
-.controls{display:flex;gap:8px;margin-top:12px}
-.list{width:340px;background:white;padding:16px;border-radius:8px;box-shadow:var(--shadow);display:flex;flex-direction:column}
-.tabHeader{display:flex;gap:8px;margin-bottom:12px}
-.tabHeader button{flex:1;padding:8px;border-radius:8px;border:1px solid var(--border);background:transparent}
-.tabHeader .active{background:var(--light-green)}
-.items{display:flex;flex-direction:column;gap:8px}
-.item{padding:12px;border-radius:8px;border:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
-.request{margin-top:12px;background:var(--green);color:white;border:none;padding:10px;border-radius:8px;cursor:pointer}
-@media(max-width:900px){.container{flex-direction:column}} */
-
 .wrap {
   display: flex;
   flex-direction: column;
@@ -28,7 +13,7 @@ font-family:sans-serif;
 .container {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap; /* allow wrapping for smaller screens */
+  flex-wrap: wrap;
 }
 
 .qrArea {
@@ -51,17 +36,22 @@ font-family:sans-serif;
   width: 100%;
   max-width: 260px;
   height: 260px;
-  background: #f2f2f2;
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.qrLarge img{
+  max-width: 150 px;
+  max-height: 150 px;
+  width: 100%;
+}
+
 .meta {
 margin-top:3.75rem;
   color: var(--muted);
-  word-break: break-word; /* prevent overflow for long UPI ID */
+  word-break: break-word;
   text-align: center;
   display: flex;
   align-items: center;
@@ -82,14 +72,14 @@ margin-top:3.75rem;
 }
 
 .copyIcon:hover {
-  transform: scale(1.2); /* small hover effect */
+  transform: scale(1.2); 
 }
 
 .controls {
   display: flex;
   gap: 0.5rem;
   margin-top: 0.75rem;
-  flex-wrap: wrap; /* buttons wrap on small screens */
+  flex-wrap: wrap;
 }
 
 p{
@@ -99,10 +89,10 @@ p{
 }
 
 .actionButton {
-  display: flex;          /* make icon and text in same line */
-  align-items: center;    /* vertically center content */
+  display: flex;          
+  align-items: center;    
   justify-content: center;
-  gap: 0.5rem;            /* space between icon and text */
+  gap: 0.5rem;           
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   border: none;
@@ -110,7 +100,7 @@ p{
   color:black;
   cursor: pointer;
   font-size: 1rem;
-  flex: 1 1 120px;        /* responsive width */
+  flex: 1 1 120px;        
   min-width: 120px;
 }
 
@@ -124,10 +114,10 @@ p{
   background: white;
 }
 .icon {
-  font-size: 20px;        /* icon size */
+  font-size: 20px;       
 }
 .controls button {
-  flex: 1 1 120px; /* flexible button width */
+  flex: 1 1 120px;
   min-width: 120px;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -137,7 +127,7 @@ p{
 
 .list {
   flex: 1;
-  min-width: 280px; /* ensure small screens don't break layout */
+  min-width: 280px; 
   background: white;
   padding: 1rem;
   border-radius: 12px;
@@ -156,7 +146,7 @@ p{
   font-weight: 500;
   border: 1px solid green;
   border-radius: 7px;
-  flex-wrap: wrap; /* tabs wrap on smaller screens */
+  flex-wrap: wrap;
 }
 .items {
   display: flex;
@@ -174,7 +164,7 @@ hr{
   justify-content: space-between;
   align-items: center;
   background: white;
-  word-break: break-word; /* ensure text wraps nicely */
+  word-break: break-word; 
 }
 
 .itemImage img {
@@ -281,7 +271,8 @@ hr{
   padding: 0.5rem;
   border-radius: 8px;
   cursor: pointer;
-  background: rgb(231, 248, 231)
+  background: rgb(231, 248, 231);
+  color: green;
 }
 
 .headerContent {
@@ -291,8 +282,8 @@ hr{
 }
 
 .radioInput {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   accent-color: var(--green);
   cursor: pointer;
 }
@@ -324,8 +315,8 @@ hr{
   gap: 0.5rem;
   padding: 0.25rem 0.5rem;
   cursor: pointer;
+  color: green;
 }
-
 
 @media (max-width: 600px) {
   .dropdownHeader {
@@ -337,7 +328,6 @@ hr{
   }
 }
 
-/* Responsive Adjustments */
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
@@ -355,9 +345,9 @@ hr{
     height: 200px;
   }
   .controls button {
-    flex: 1 1 48%; /* two buttons per row on very small screens */
+    flex: 1 1 48%;
   }
   .tabHeader button {
-    flex: 1 1 48%; /* wrap tabs nicely */
+    flex: 1 1 48%;
   }
 }

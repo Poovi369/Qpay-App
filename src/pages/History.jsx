@@ -631,7 +631,6 @@ const History = () => {
       const data = await fetchTransactionHistory({ service_id: serviceId, token: authToken });
       console.log("apidata", data)
       setTransactions(data?.data);
-      // setTotalPages(tp || 1);
     } catch (err) {
       console.error(err);
       setError(err?.response?.data?.message || err.message || 'Failed to load transactions');
@@ -653,15 +652,12 @@ const History = () => {
 
 useEffect(() => {
     const now = new Date();
-    const tomorrow = new Date(now.getTime() + 12 * 60 * 60 * 1000); // add 12 hours
-
-    // Format time
+    const tomorrow = new Date(now.getTime() + 12 * 60 * 60 * 1000);
     const timeStr = tomorrow.toLocaleString("en-US", {
       hour: "numeric",
       minute: "2-digit",
       hour12: true,
     });
-        // Format date with suffix
     const day = tomorrow.getDate();
     const month = tomorrow.toLocaleString("en-US", { month: "short" });
     const year = tomorrow.getFullYear().toString().slice(-2);
@@ -687,8 +683,6 @@ useEffect(() => {
       <h2>Settlement History</h2>
       <button className={styles.downloadButton}>Download Statement</button>
       </div>
-
-      {/* Search Bar with Filter Icon */}
       <div className={styles.searchRow}>
         <div className={styles.searchBar}>
           <SearchIcon className={styles.searchIcon} />
