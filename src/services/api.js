@@ -5,7 +5,7 @@ const API_BASE = 'https://dev.expressfintech.in';
 
 
 export const fetchTransactionHistory = async ({ service_id, token }) => {
-  const url = `${API_BASE}/transaction_history`;
+  const url = `${API_BASE}/transaction_history/`;
   const params = {service_id: service_id}
   const headers = {
     Authorization: `Bearer ${token}`,
