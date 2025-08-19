@@ -1,0 +1,14 @@
+:root{
+  --green: #2f7a45;
+  --light-green: #eaf4ea;
+  --muted: #6b6b6b;
+  --card-bg: #fff;
+  --border: #e6e6e6;
+  --shadow: 0 6px 18px rgba(11,16,12,0.06);
+  font-family: "Inter", "Roboto", sans-serif;
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%;margin:0;background:#f7f8f6}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}

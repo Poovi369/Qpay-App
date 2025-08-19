@@ -1,0 +1,78 @@
+.transaction-container {
+  margin: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.transaction-table th,
+.transaction-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 14px;
+}
+
+.transaction-table th {
+  color: #666;
+  font-weight: 500;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status.pending {
+  color: #e67e22;
+  background: #fef5e6;
+}
+
+.status.success {
+  color: #27ae60;
+  background: #eafaf1;
+}
+
+.status.failed {
+  color: #e74c3c;
+  background: #fdecea;
+}
+
+.view-btn {
+  background: none;
+  border: none;
+  color: #1e90ff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.pagination button {
+  padding: 6px 10px;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #2ecc71;
+  color: white;
+  font-weight: bold;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

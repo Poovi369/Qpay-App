@@ -1,0 +1,242 @@
+.wrap{display:flex;flex-direction:column;gap:12px}
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+h2{
+    font-size: 28px;
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}
+.panel{background:white;padding:12px;border-radius:8px;box-shadow:var(--shadow)}
+.info{padding:16px;color:var(--muted)}
+.error{padding:16px;color:#a33;background:#ffecec;border-radius:6px}
+
+
+.downloadButton {
+  color: #0f7c42;
+  border: 1.5px solid #0f7c42;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.downloadBtn {
+  padding: 0.5rem 1rem;
+  background-color: var(--green);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.searchRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  background-color: #ffffff;
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.searchIcon {
+  margin-right: 0.5rem;
+  color: gray;
+}
+
+.searchInput {
+  border: none;
+  background: transparent;
+  flex: 1;
+  outline: none;
+  font-size: 1rem;
+}
+
+.filterIcon {
+  font-size: 35px;
+  cursor: pointer;
+  color: var(--green);
+  background-color: #0f7c42;
+  border-radius: 5px;
+  color: white;
+  padding: 4px;;
+}
+
+.scheduleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 0;
+  padding: 18px;
+  border: 1px solid rgb(0, 128, 0);
+  border-radius: 8px;
+  background: rgb(231, 248, 231)
+}
+
+.scheduleText {
+  flex: 1;
+  margin: 0 12px;
+  font-size: 15px;
+  color: #888787;
+}
+strong{
+    color: #0f7c42;
+}
+
+.icon {
+  color: #0f7c42;
+}
+
+.settleNow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background:#0f7c42;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 45px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.settleNow:hover {
+  background: #125aa0;
+}
+
+.timerIcon {
+  font-size: 18px;
+}
+
+
+
+/* ---------- Table ---------- */
+.tableWrap {
+  background: white;
+  border-radius: 10px;
+  overflow-x: auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px; /* scroll on small devices */
+}
+
+th, td {
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background: #f5f5f5;
+  font-weight: 600;
+}
+
+tr:hover td {
+  background: #fafafa;
+}
+
+.viewButton {
+  background: #2196f3;
+  color: white;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.3s ease;
+}
+
+.viewButton:hover {
+  background: #1976d2;
+}
+
+/* ---------- Pagination ---------- */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.pagination button.active {
+  background: #2196f3;
+  color: white;
+  border-color: #2196f3;
+}
+
+.pagination button:hover:not(.active) {
+  background: #f0f0f0;
+}
+
+/* ---------- States ---------- */
+.info {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.error {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: red;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .headerRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .searchRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .scheduleRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  table {
+    min-width: 100%;
+  }
+}

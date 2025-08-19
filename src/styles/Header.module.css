@@ -1,0 +1,90 @@
+.header {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+  position: fixed;
+}
+
+.logo img {
+  height: 35px;
+  cursor: pointer;
+}
+
+.rightItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.profileIcon {
+  font-size: 28px;
+  color: gray;
+}
+
+.dropdownIcon {
+  font-size: 14px;
+  color: #565555;
+  cursor: pointer;
+}
+
+.style {
+  color: rgb(172, 169, 169);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.rightText {
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.2;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 15px;
+    height: 55px;
+  }
+
+  .logo img {
+    height: 32px;
+  }
+
+  .right-text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 0 10px;
+    height: 50px;
+  }
+
+  .logo img {
+    height: 28px;
+  }
+
+  .right-item {
+    gap: 5px;
+  }
+
+  .right-text {
+    font-size: 12px;
+  }
+
+  .dropdown-icon {
+    font-size: 12px;
+  }
+}
+

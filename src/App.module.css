@@ -1,0 +1,17 @@
+.app{
+  display:flex;
+  min-height:100vh;
+  padding-top: 120px;
+  padding-left: 70px;
+}
+.main{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+.content{
+  padding-left: 70px;
+  padding-right: 70px;
+  max-width:1200px;
+  width:100%;
+}

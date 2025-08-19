@@ -1,0 +1,110 @@
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #2f7a45, #2e6f3e);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  border-radius: 12px;
+}
+
+.menu {
+  padding: 20px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: #87c594;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.historyRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.historyLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.downIcon {
+  font-size: 20px;
+  opacity: 0.8;
+}
+.active {
+  color:rgba(3, 142, 3, 0.596);
+  font-weight: 500;
+  background: white;
+  border-left: 4px solid #fff;
+}
+
+.footer {
+  font-size: 15px;
+  font-weight: 800;
+  opacity: 0.9;
+  background-color: white;
+  color: orangered;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #2f7a45;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 180px;
+  }
+  .menu {
+    padding: 15px;
+  }
+  .nav a {
+    padding: 10px;
+    font-size: 14px;
+  }
+  .footer {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 150px;
+  }
+  .menu {
+    padding: 10px;
+  }
+  .nav a {
+    padding: 8px;
+    font-size: 12px;
+  }
+  .footer {
+    font-size: 12px;
+    padding: 6px;
+  }
+}

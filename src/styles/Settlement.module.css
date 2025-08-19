@@ -1,0 +1,155 @@
+.popupPaper {
+  border: 2px solid green;
+  border-radius: 10px !important;
+  padding: 20px;
+  background: white;
+  max-width: 600px;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.headerText {
+  font-size: 25px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.closeIcon {
+  cursor: pointer;
+  color: black;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.left, .right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+}
+
+.left span{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.right span{
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.icon {
+  color: black;
+}
+
+.nextleft, .nextright{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+}
+
+.icons{
+  color: #3f8f57;
+}
+
+.nextleft span{
+  color: #3f8f57;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nextright .icons{
+  color: #3f8f57;
+}
+
+hr{
+ width: 99%; 
+}
+
+.sectionTitle {
+  font-weight: 500;
+  margin: 12px 0;
+  font-size: 9px;
+  color: rgb(126, 124, 124);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.leftText{
+  font-size: 13px;
+  color:  rgb(126, 124, 124);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.rightText{
+  font-size: 13px;
+  color: black;
+}
+
+.leftside, .rightside {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+.rightside .icon{
+  color:rgb(126, 124, 124);
+}
+
+.footer {
+  display: flex;  
+  align-items: center;
+  border: 1px solid #ddd;
+  justify-content: space-between;
+  background: #d8f9e2;
+  padding: 18px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.footerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  max-width: 70%;
+}
+
+.footerNote {
+  margin: 0;
+  font-weight: 500;
+  color: black;
+}
+
+.footerSubNote {
+  margin: 0;
+  color:#2f7a45;
+  font-size: 12px;
+}
+
+.footerRight {
+  display: flex;
+  align-items: center;
+}
+
+.settleBtn {
+  padding: 8px 25px;
+  background: #2f7a45;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
