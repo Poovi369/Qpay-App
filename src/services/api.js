@@ -23,7 +23,7 @@ export const fetchTransactionHistory = async ({ service_id, token }) => {
     // const res = await axios.get(url, { params, headers });
     const res = axios
       .get(
-        "https://dev.expressfintech.in/transaction_history/?service_id=${service_id}",
+        "https://dev.expressfintech.in/transaction_history/?service_id=111",
         {
           headers: {
             "Authorization": `Bearer ${token}`, // <-- make sure token is fresh
