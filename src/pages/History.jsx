@@ -628,10 +628,14 @@ const History = () => {
     setLoading(true);
     setError(null);
     try {
-      // const data = await fetchTransactionHistory({ service_id: serviceId, token: authToken });
-      // // console.log("apidata", data)
-      // setTransactions(data?.data);
-        setTransactions(testData);
+      const data = await fetchTransactionHistory({ service_id: serviceId, token: authToken });
+      // console.log("apidata", data)
+      if(data?.data){
+       setTransactions(data?.data);
+      }
+      else{
+      setTransactions(testData);
+      }
     } catch (err) {
       console.error(err);
       setError(err?.response?.data?.message || err.message || 'Failed to load transactions');
