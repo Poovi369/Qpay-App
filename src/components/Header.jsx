@@ -1,5 +1,4 @@
 import React from "react";
-// import "./Header.css";
 import styles from '../styles/Header.module.css'
 import { FaChevronDown } from "react-icons/fa";
 import { NavLink } from "react-router-dom";

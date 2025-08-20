@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useAppContext } from '../context/AppContext';
 import { fetchTransactionHistory } from '../services/api';
 import TransactionItem from '../components/TransactionItem';
-// import Pagination from '../components/Pagination';
 import styles from '../styles/History.module.css';
 import SearchIcon from '@mui/icons-material/Search';
 import FilterListIcon from '@mui/icons-material/FilterList';
@@ -615,11 +614,8 @@ const testData = [
 
 const History = () => {
   const { serviceId, authToken } = useAppContext();
-  // const [page, setPage] = useState(0);
   const [transactions, setTransactions] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  // const [totalPages, setTotalPages] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
     const [settleTime, setSettleTime] = useState("");
     const [open, setOpen] = useState(false);
@@ -630,8 +626,8 @@ const History = () => {
     try {
       const data = await fetchTransactionHistory({ service_id: serviceId, token: authToken });
       // console.log("apidata", data)
-      if(data?.data){
-       setTransactions(data?.data);
+      if(data?.length>0){
+       setTransactions(data);
       }
       else{
       setTransactions(testData);
@@ -639,8 +635,6 @@ const History = () => {
     } catch (err) {
       console.error(err);
       setError(err?.response?.data?.message || err.message || 'Failed to load transactions');
-    } finally {
-      setLoading(false);
     }
   };
 
