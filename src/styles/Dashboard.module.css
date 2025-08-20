@@ -3,46 +3,44 @@
   flex-direction: column;
   gap: 18px;
   width: 100%;
-  overflow-x: hidden; 
+  padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
 }
-
 .topBanner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   background: linear-gradient(90deg, var(--green), #58a05f);
   color: white;
   border-radius: 8px;
-  padding: 15px;
+  padding: 20px;
+  gap: 15px;
 }
-
+.image img {
+  max-width: 100%;
+  border-radius: 8px;
+}
 .belowBanner {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
-.image img {
-  max-width: 100%;
-  height: auto;
-}
-
 .firstItem {
-  font-size: 28px;
+  font-size: clamp(18px, 2.5vw, 26px);
   font-weight: 500;
 }
-
 .firstItem strong{
   color: white;
 }
-
 .secondItem {
-  font-size: 28px;
+  font-size: clamp(18px, 2.5vw, 26px);
   font-weight: 700;
 }
-
 .thirdItem {
-  color: #81d49a;
+  color: #c9f0d1;
+  font-size: clamp(13px, 1.8vw, 16px);
 }
-
 .btn {
   background: white;
   color: var(--green);
@@ -52,14 +50,17 @@
   cursor: pointer;
   font-weight: 600;
   font-size: 15px;
+  align-self: start;
+  transition: 0.3s ease;
 }
-
-.cards h3 {
-  color: #2e6f3e;
-  font-size: 22px;
-  font-weight: 700;
+.btn:hover {
+  background: #f8f8f8;
 }
-
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+}
 .card {
   background: var(--card-bg);
   padding: 18px;
@@ -67,106 +68,127 @@
   box-shadow: var(--shadow);
   text-align: center;
   border: 1px solid #d1cdcd;
-  font-size: 18px;
 }
-
+.cards h3 {
+  color: #2e6f3e;
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 700;
+}
+.panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+}
 .panel {
   background: var(--card-bg);
   padding: 18px;
   border-radius: 8px;
   box-shadow: var(--shadow);
-  height: 100%;
 }
-
-h5{
-  font-weight: 600;
-  color: gray;
-}
-
-p{
-  font-size: 15px;
-  font-weight: 500;
-  color: black;
-}
-ul li{
-  color: gray;
-}
-
 .progress {
   display: flex;
-  gap: 12px;
+  gap: 15px;
+  align-items: center;
 }
-
 .ring {
-  width: 110px;
-  height: 110px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background: var(--light-green);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .inner {
   font-weight: 700;
+  font-size: 14px;
 }
-
+.qrBox {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
 .qrPlaceholder {
-  width: 110px;
-  height: 110px;
+  width: 80px;
+  height: 80px;
   background: #f0f0f0;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .qrPlaceholder img {
   max-width: 100%;
-  height: auto;
 }
-
+.buttonWrapper {
+  margin-top: 10px;
+}
 .next {
   width: 100%;
   cursor: pointer;
   background: var(--green);
   color: white;
   border: none;
-  padding: 8px 14px;
+  padding: 10px 14px;
   border-radius: 8px;
-  margin-top: 8px;
+  font-size: 14px;
+  transition: 0.3s ease;
 }
-
+.next:hover {
+  background: #2e6f3e;
+}
+.largeCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+}
 .cardLarge {
   background: var(--card-bg);
   padding: 18px;
   border-radius: 12px;
   box-shadow: var(--shadow);
   border: 1px solid #d1cdcd;
+}
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.amount {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.transac strong {
   font-size: 14px;
-  width: 100%;
+}
+.money {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+@media (max-width: 480px) {
+  .topBanner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .belowBanner {
+    align-items: center;
+  }
+  .btn {
+    align-self: center;
+  }
+  .ring,
+  .qrPlaceholder {
+    width: 60px;
+    height: 60px;
+  }
 }
 
-.cardLarge h6{
-  color: rgb(151, 150, 150);
-}
-
-.cardLarge h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin: 0;
-}
-
-.cardLarge small {
-  color: gray;
-  font-size: 13px;
-}
-
-.cardLarge button {
-  width: 100%;
-}
-
-.transac strong{
-  color: black;
-  font-family: Arial, Helvetica, sans-serif;
-}
