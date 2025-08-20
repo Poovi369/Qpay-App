@@ -136,3 +136,38 @@ ul li{
   border-radius: 8px;
   margin-top: 8px;
 }
+
+
+.cardLarge {
+  background: var(--card-bg);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  border: 1px solid #d1cdcd;
+  font-size: 14px;
+  width: 100%;
+}
+
+.cardLarge h6{
+  color: rgb(151, 150, 150);
+}
+
+.cardLarge h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.cardLarge small {
+  color: gray;
+  font-size: 13px;
+}
+
+.cardLarge button {
+  width: 100%;
+}
+
+.transac strong{
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}

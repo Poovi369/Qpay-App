@@ -3,6 +3,8 @@ import styles from '../styles/Dashboard.module.css';
 import { Link } from 'react-router-dom';
 import HS from '../assests/HS-img.png'
 import qr from '../assests/qr-code.png'
+import CurrencyRupeeOutlinedIcon from '@mui/icons-material/CurrencyRupeeOutlined';
+import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 
 const Dashboard = () => {
   return (
@@ -87,6 +89,98 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      <div className="row g-3 mt-2">
+        <div className="col-12 col-lg-6">
+          <div className={styles.cardLarge}>
+            <div className="d-flex justify-content-between align-items-center">
+              <h6>Settlement</h6>
+              <ArrowForwardIosOutlinedIcon fontSize="small" />
+            </div>
+            <div className="d-flex align-items-center mt-2">
+              <CurrencyRupeeOutlinedIcon />
+              <h3 className="ms-1">1,23,816.19</h3>
+            </div>
+            <hr />
+            <div className="d-flex justify-content-between align-items-center mb-2">
+              <div className={styles.transac}>
+                <strong>Ibrahim</strong><br />
+                <small>23 July, 9.15 AM</small>
+              </div>
+              <div className="d-flex align-items-center">
+                +<CurrencyRupeeOutlinedIcon fontSize="small" />
+                <span className="ms-1">90</span>
+              </div>
+            </div>
+            <div className="d-flex justify-content-between align-items-center mb-2">
+              <div className={styles.transac}>
+                <strong>Ibrahim</strong><br />
+                <small>23 July, 9.15 AM</small>
+              </div>
+              <div className="d-flex align-items-center">
+                +<CurrencyRupeeOutlinedIcon fontSize="small" />
+                <span className="ms-1">90</span>
+              </div>
+            </div>
+            <div className="d-flex justify-content-between align-items-center mb-2">
+              <div className={styles.transac}>
+                <strong>Ibrahim</strong><br />
+                <small>23 July, 9.15 AM</small>
+              </div>
+              <div className="d-flex align-items-center">
+                +<CurrencyRupeeOutlinedIcon fontSize="small" />
+                <span className="ms-1">90</span>
+              </div>
+            </div>
+            <div className={styles.buttonWrapper}>
+            <Link to="/history"><button className={`${styles.next} mt-2`}>Settle Now</button></Link>
+            </div>
+          </div>
+        </div>
+        <div className="col-12 col-lg-6">
+          <div className={styles.cardLarge}>
+            <div className="d-flex justify-content-between align-items-center">
+              <h6>Total Transaction</h6>
+              <ArrowForwardIosOutlinedIcon fontSize="small" />
+            </div>
+            <div className="d-flex align-items-center mt-2">
+              <CurrencyRupeeOutlinedIcon />
+              <h3 className="ms-1">1,23,816.19</h3>
+            </div>
+            <hr />
+            <div className="d-flex justify-content-between align-items-center mb-2">
+              <div className={styles.transac}>
+                <strong>Ibrahim</strong><br />
+                <small>23 July, 9.15 AM</small>
+              </div>
+              <div className="d-flex align-items-center">
+                +<CurrencyRupeeOutlinedIcon fontSize="small" />
+                <span className="ms-1">90</span>
+              </div>
+            </div>
+            <div className="d-flex justify-content-between align-items-center mb-2">
+              <div className={styles.transac}>
+                <strong>Ibrahim</strong><br />
+                <small>23 July, 9.15 AM</small>
+              </div>
+              <div className="d-flex align-items-center">
+                +<CurrencyRupeeOutlinedIcon fontSize="small" />
+                <span className="ms-1">90</span>
+              </div>
+            </div>
+            <div className="d-flex justify-content-between align-items-center mb-2">
+              <div className={styles.transac}>
+                <strong>Ibrahim</strong><br />
+                <small>23 July, 9.15 AM</small>
+              </div>
+              <div className="d-flex align-items-center">
+                +<CurrencyRupeeOutlinedIcon fontSize="small" />
+                <span className="ms-1">90</span>
+              </div>
+            </div>
+            <button className={`${styles.next} mt-2`}>View All</button>
+          </div>
+        </div>
+        </div>
     </div>
   );
 };
