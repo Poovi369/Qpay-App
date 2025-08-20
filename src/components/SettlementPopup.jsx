@@ -64,8 +64,6 @@ const SettlementPopup = ({ open, onClose }) => {
           <span>1,023</span>
         </div>
       </div>
-
-      {/* Step 11: Footer */}
       <div className={styles.footer}>
         <div className={styles.footerLeft}>
           <p className={styles.footerNote}>
