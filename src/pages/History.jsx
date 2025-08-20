@@ -616,6 +616,7 @@ const History = () => {
   const { serviceId, authToken } = useAppContext();
   const [transactions, setTransactions] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
     const [settleTime, setSettleTime] = useState("");
     const [open, setOpen] = useState(false);
