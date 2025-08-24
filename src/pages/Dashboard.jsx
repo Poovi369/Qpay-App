@@ -1,12 +1,49 @@
 import React from 'react';
 import styles from '../styles/Dashboard.module.css';
 import { Link } from 'react-router-dom';
-import HS from '../assests/HS-img.png';
+import Tns from '../assests/HS-img.png';
 import qr from '../assests/qr-code.png';
 import CurrencyRupeeOutlinedIcon from '@mui/icons-material/CurrencyRupeeOutlined';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 
 const Dashboard = () => {
+  const transacinfo = [
+    {
+      name : "Ibrahim",
+      date : "23 July, 9.15 AM",
+      amount : "90"
+    },
+    {
+      name : "Ibrahim",
+      date : "23 July, 9.15 AM",
+      amount : "90"
+    },
+    {
+      name : "Ibrahim",
+      date : "23 July, 9.15 AM",
+      amount : "90"
+    }
+  ]
+
+  const cardinfo = [
+    {
+      count : "1.5k",
+      type : "Account Holders",
+    },
+    {
+      count : "2.1k",
+      type : "Transactions",
+    },
+    {
+      count : "2.3k",
+      type : "Settlement",
+    },
+    {
+      count : "45k",
+      type : "QR Orders",
+    }
+  ]
+
   return (
     <div className={styles.wrap}>
       <div className={styles.topBanner}>
@@ -19,14 +56,14 @@ const Dashboard = () => {
           <button className={styles.btn}>Download App Now!</button>
         </div>
         <div className={styles.image}>
-          <img src={HS} alt="Bill" />
+          <img src={Tns} alt="Bill" />
         </div>
       </div>
       <div className={styles.cards}>
-        <div className={styles.card}><h3>1.5k</h3><p>Account Holders</p></div>
-        <div className={styles.card}><h3>2.1k</h3><p>Transactions</p></div>
-        <div className={styles.card}><h3>2.3k</h3><p>Settlement</p></div>
-        <div className={styles.card}><h3>45k</h3><p>QR Orders</p></div>
+
+      {cardinfo.map((info, i)=>(
+        <div key={i} className={styles.card}><h3>{info.count}</h3><p>{info.type}</p></div>
+      ))}
       </div>
       <div className={styles.panels}>
         <div className={styles.panel}>
@@ -80,15 +117,15 @@ const Dashboard = () => {
             <h3>1,23,816.19</h3>
           </div>
           <hr />
-          {[1, 2, 3].map((_, i) => (
+          {transacinfo.map((userdata, i) => (
             <div key={i} className={styles.transaction}>
               <div className={styles.transac}>
-                <strong>Ibrahim</strong><br />
-                <small>23 July, 9.15 AM</small>
+                <strong>{userdata.name}</strong><br />
+                <small>{userdata.date}</small>
               </div>
               <div className={styles.money}>
                 +<CurrencyRupeeOutlinedIcon fontSize="small" />
-                <span>90</span>
+                <span>{userdata.amount}</span>
               </div>
             </div>
           ))}
@@ -107,15 +144,15 @@ const Dashboard = () => {
             <h3>1,23,816.19</h3>
           </div>
           <hr />
-          {[1, 2, 3].map((_, i) => (
+          {transacinfo.map((userdata, i) => (
             <div key={i} className={styles.transaction}>
               <div className={styles.transac}>
-                <strong>Ibrahim</strong><br />
-                <small>23 July, 9.15 AM</small>
+                <strong>{userdata.name}</strong><br />
+                <small>{userdata.date}</small>
               </div>
               <div className={styles.money}>
                 +<CurrencyRupeeOutlinedIcon fontSize="small" />
-                <span>90</span>
+                <span>{userdata.amount}</span>
               </div>
             </div>
           ))}

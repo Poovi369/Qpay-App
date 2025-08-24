@@ -8,6 +8,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import qrlogo from '../assests/qr-logo.png'
 import qpay from '../assests/qpay-logo.png'
+import { Terminal } from "@mui/icons-material";
 
 const QR = () => {
   const [activeTab, setActiveTab] = useState('active');
@@ -17,6 +18,44 @@ const QR = () => {
     "Awaiting Dispatch",
     "Dispatched",
   ];
+
+  const activeqr = [{
+    qrid : "Q2019465579",
+    type : "All Marketing Sales",
+    qrno : "MS19030411553316489802579",
+    terminal : "Terminal"
+  },
+  {
+    qrid : "Q2019465580",
+    type : "All Marketing Sales",
+    qrno : "MS19030411553316489802580",
+    terminal : "Terminal"
+  },
+  {
+    qrid : "Q2019465581",
+    type : "All Marketing Sales",
+    qrno : "MS19030411553316489802581",
+    terminal : "Terminal"
+  },
+  {
+    qrid : "Q2019465582",
+    type : "All Marketing Sales",
+    qrno : "MS19030411553316489802582",
+    terminal : "Terminal"
+  }
+]
+
+const saleqr = [{
+  type : "All Marketing Sales",
+  address : "45, Bharathi Nagar, VOC Port Authority,Tuticorin, 628004.",
+  reqdate : "Requested on 26.04.2025"
+},
+{
+  type : "All Marketing Sales",
+  address : "45, Bharathi Nagar, VOC Port Authority,Tuticorin, 628004.",
+  reqdate : "Requested on 26.04.2025"
+}
+]
   const [openDropdowns, setOpenDropdowns] = useState({});
   const [selectedStatus, setSelectedStatus] = useState({});
 
@@ -44,7 +83,9 @@ const QR = () => {
             <span className={styles.upiText}>UPI ID: 9876543210@qpay</span>
             <ContentCopyOutlinedIcon
               className={styles.copyIcon}
-              onClick={() => navigator.clipboard.writeText("9876543210@qpay")}
+              onClick={() => {navigator.clipboard.writeText("9876543210@qpay");
+              alert("UPI ID copied to clipboard!")
+              }}
             />
           </div>
           <p>Ibrahim Mohammedali</p>
@@ -78,7 +119,7 @@ const QR = () => {
           <div className={styles.items}>
             {activeTab === 'active' ? (
               <>
-                {[579, 580, 581, 582].map((id, index) => (
+                {activeqr.map((data, index) => (
                   <div key={index}>
                     <div className={styles.itemWrapper}>
                       <div className={styles.item}>
@@ -86,10 +127,10 @@ const QR = () => {
                           <img src={qrlogo} alt="QR" height="40" />
                         </div>
                         <div className={styles.itemInfo}>
-                          <div className={styles.itemId}>Q2019465{id}</div>
+                          <div className={styles.itemId}>{data.qrid}</div>
                           <div className={styles.itemDetails}>
-                            <p>All Marketing Sales -<br/>MS19030411553316489802{id}</p>
-                            <div className={styles.itemstyle}>Terminal {index + 1}</div>
+                            <p>{data.type} -<br/>{data.qrno}</p>
+                            <div className={styles.itemstyle}>{data.terminal} {index + 1}</div>
                           </div>
                         </div>
                         <div className={styles.itemAction}>
@@ -103,7 +144,7 @@ const QR = () => {
               </>
             ) : (
               <>
-                {[0, 1].map((index) => (
+                {saleqr.map((data,index) => (
                   <div key={index}>
                     <div className={styles.itemWrapper}>
                       <div className={styles.item}>
@@ -111,10 +152,10 @@ const QR = () => {
                           <img src={qrlogo} alt="QR" height="40" />
                         </div>
                         <div className={styles.itemInfo}>
-                          <div className={styles.itemId}>All Marketing Sales</div>
+                          <div className={styles.itemId}>{data.type}</div>
                           <div className={styles.itemDetails}>
-                            <p>45, Bharathi Nagar, VOC Port Authority,Tuticorin, 628004.</p>
-                            <div className={styles.itemstyle}>Requested on 26.04.2025</div>
+                            <p>{data.address}</p>
+                            <div className={styles.itemstyle}>{data.reqdate}</div>
                           </div>
                         </div>
                       </div>
@@ -134,16 +175,18 @@ const QR = () => {
                         <span className={styles.selectedText}>
                           {selectedStatus[index] || "QR Request Accepted"}
                         </span>
+                        <span className={styles.selectedIcon}>
                         {openDropdowns[index] ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+                        </span>
                       </div>
 
                       {openDropdowns[index] && (
                         <div className={styles.dropdownList}>
                           {statuses
                             .filter((status) => status !== "QR Request Accepted")
-                            .map((status, sIndex) => (
+                            .map((status, Index) => (
                               <div
-                                key={sIndex}
+                                key={Index}
                                 className={styles.dropdownItem}
                               >
                                 <input

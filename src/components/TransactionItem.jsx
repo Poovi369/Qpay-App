@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./TransactionItem.css";
 
-const TransactionItem = ({ data }) => {
+const TransactionItem = ({ data, searchTerm }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
   const totalPages = Math.ceil(data.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentItems = data.slice(startIndex, startIndex + itemsPerPage);
+  const currentItems = data.slice(startIndex, startIndex + itemsPerPage)
+  // const [currentItems, setCurrentItems] = useState(pageInfo);
 
   const handlePageChange = (page) => {
     if (page > 0 && page <= totalPages) {
@@ -49,7 +50,10 @@ const TransactionItem = ({ data }) => {
       </table>
 
       <div className="pagination">
-        <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
+        <button
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
           &lt;
         </button>
         {[...Array(totalPages)].map((_, i) => (
@@ -61,7 +65,10 @@ const TransactionItem = ({ data }) => {
             {i + 1}
           </button>
         ))}
-        <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
+        <button
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+        >
           &gt;
         </button>
       </div>

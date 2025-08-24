@@ -9,7 +9,7 @@ export const fetchTransactionHistory = async ({ service_id, token }) => {
     const params = { service_id };
     const headers = { Authorization: `Bearer ${token}` };
     const res = await axios.get(url, { params, headers });
-    return res.data;
+    return res;
   } catch (err) {
     console.error("API Error:", err);
     throw err;

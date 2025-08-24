@@ -46,7 +46,7 @@ const Sidebar = () => {
                 to={item.path}
                 end
                 className={({ isActive }) => (isActive ? styles.active : "")}
-                onClick={() => setIsOpen(false)}
+                // onClick={() => setIsOpen(false)}
               >
                 {item.icon}
                 {item.label}
