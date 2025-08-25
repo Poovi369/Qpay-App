@@ -4,7 +4,6 @@ import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import AccountBalanceOutlinedIcon from "@mui/icons-material/AccountBalanceOutlined";
 import CurrencyRupeeOutlinedIcon from "@mui/icons-material/CurrencyRupeeOutlined";
 import AssuredWorkloadOutlinedIcon from "@mui/icons-material/AssuredWorkloadOutlined";
-import styles from '../styles/Settlement.module.css'
 
 const SettlementPopup = ({ open, onClose }) => {
   return (
@@ -12,67 +11,93 @@ const SettlementPopup = ({ open, onClose }) => {
       open={open}
       onClose={onClose}
       PaperProps={{
-        className: styles.popupPaper,
+        className: "w-full max-w-lg p-5 rounded-xl",
       }}
     >
-      <div className={styles.header}>
-        <span className={styles.headerText}>Manage QR/POS</span>
-        <CloseOutlinedIcon onClick={onClose} className={styles.closeIcon} />
+      {/* Header */}
+      <div className="flex justify-between items-center mb-4">
+        <span className="text-black font-semibold text-lg md:text-xl">
+          Manage QR/POS
+        </span>
+        <CloseOutlinedIcon
+          onClick={onClose}
+          className="cursor-pointer text-black text-lg md:text-xl"
+        />
       </div>
-      <div className={styles.row}>
-        <div className={styles.left}>
-          <AccountBalanceOutlinedIcon className={styles.icon} />
+
+      {/* First Row */}
+      <div className="flex justify-between items-center my-2">
+        <div className="flex items-center gap-2 text-sm md:text-base">
+          <AccountBalanceOutlinedIcon className="text-black" />
           <span>Today's Total Collection</span>
         </div>
-        <div className={styles.right}>
-          <CurrencyRupeeOutlinedIcon className={styles.icon} />
-          <span>1,023</span>
+        <div className="flex items-center gap-2 text-sm md:text-base">
+          <CurrencyRupeeOutlinedIcon className="text-black" />
+          <span className="font-bold text-lg md:text-xl">1,023</span>
         </div>
       </div>
-      <div className={styles.row}>
-        <div className={styles.nextleft}>
-          <AssuredWorkloadOutlinedIcon className={styles.icons} />
+
+      {/* Second Row */}
+      <div className="flex justify-between items-center my-2">
+        <div className="flex items-center gap-2 text-sm md:text-base text-green-600">
+          <AssuredWorkloadOutlinedIcon className="text-green-600" />
           <span>Already Settled</span>
         </div>
-        <div className={styles.nextright}>
-          <CurrencyRupeeOutlinedIcon className={styles.icons} />
-          <span>100</span>
+        <div className="flex items-center gap-2 text-sm md:text-base text-green-600">
+          <CurrencyRupeeOutlinedIcon className="text-green-600" />
+          <span className="font-semibold">100</span>
         </div>
       </div>
-      <hr />
-      <div className={styles.sectionTitle}>SETTLEMENT CALCULATION</div>
-      <div className={styles.row}>
-        <span className={styles.leftText}>Amount yet to be settled</span>
-        <span className={styles.rightText}>IBRAHIM MOHAMMEDALI</span>
+
+      <hr className="my-3 border-gray-300" />
+
+      {/* Section Title */}
+      <div className="text-gray-500 text-xs md:text-sm font-medium mb-2">
+        SETTLEMENT CALCULATION
       </div>
-      <div className={styles.row}>
-        <span className={styles.leftText}>Past pending amount</span>
-        <span className={styles.rightText}>09638473829</span>
+
+      {/* Settlement Details Rows */}
+      <div className="flex justify-between items-center my-1 text-sm md:text-base">
+        <span className="text-gray-500">Amount yet to be settled</span>
+        <span className="text-black">IBRAHIM</span>
       </div>
-      <div className={styles.row}>
-        <span className={styles.leftText}>Charges</span>
-        <span className={styles.rightText}>19, Aug, 2025</span>
+      <div className="flex justify-between items-center my-1 text-sm md:text-base">
+        <span className="text-gray-500">Past pending amount</span>
+        <span className="text-black">09638473829</span>
       </div>
-      <hr />
-      <div className={styles.row}>
-        <div className={styles.leftside}>
-          <AccountBalanceOutlinedIcon className={styles.icon} />
+      <div className="flex justify-between items-center my-1 text-sm md:text-base">
+        <span className="text-gray-500">Charges</span>
+        <span className="text-black">19, Aug, 2025</span>
+      </div>
+
+      <hr className="my-3 border-gray-300" />
+
+      {/* Last Row */}
+      <div className="flex justify-between items-center my-2">
+        <div className="flex items-center gap-2 text-sm md:text-base">
+          <AccountBalanceOutlinedIcon className="text-gray-600" />
           <span>Today's Total Collection</span>
         </div>
-        <div className={styles.rightside}>
-          <CurrencyRupeeOutlinedIcon className={styles.icon} />
-          <span>1,023</span>
+        <div className="flex items-center gap-2 text-sm md:text-base">
+          <CurrencyRupeeOutlinedIcon className="text-gray-600" />
+          <span className="font-semibold">1,023</span>
         </div>
       </div>
-      <div className={styles.footer}>
-        <div className={styles.footerLeft}>
-          <p className={styles.footerNote}>
+
+      {/* Footer */}
+      <div className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0 bg-green-100 p-4 rounded-lg mt-4">
+        <div className="flex flex-col gap-1 max-w-full md:max-w-[70%] text-sm md:text-base">
+          <p className="text-black font-medium">
             Tap 'Settle Now' to instantly get settlements in your bank account.
           </p>
-          <p className={styles.footerSubNote}>Settle Now is Chargeable.</p>
+          <p className="text-green-700 text-xs md:text-sm">
+            Settle Now is Chargeable.
+          </p>
         </div>
-        <div className={styles.footerRight}>
-          <button className={styles.settleBtn}>Settle Now</button>
+        <div className="flex-shrink-0">
+          <button className="bg-green-700 text-white px-6 py-2 rounded-lg text-sm md:text-base">
+            Settle Now
+          </button>
         </div>
       </div>
     </Dialog>
@@ -80,3 +105,4 @@ const SettlementPopup = ({ open, onClose }) => {
 };
 
 export default SettlementPopup;
+

@@ -7,7 +7,7 @@ export const fetchTransactionHistory = async ({ service_id, token }) => {
   try {
     const url = `${API_BASE}/transaction_history/`;
     const params = { service_id };
-    const headers = { Authorization: `Bearer ${token}` };
+    const headers = { Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMjgyMDUiLCJtb2JpbGUiOiI3MzU4MjIxMzU0IiwiYXBwX2lkIjoiNjAiLCJtaWQiOiIzNDgiLCJ0b2tlbiI6IjZjZjFhMzNhZDJkOGQyNjFkMWYwNDBiMWIwZGViMjc1IiwiZ3JvdXBJZCI6IjIxMDYxIiwiaXNzIjoiMjgyMDUifQ.ADopz72M1Z-eKpFXJd04RZvLxXHyJ8fFaT4HnzxxQCk` };
     const res = await axios.get(url, { params, headers });
     return res;
   } catch (err) {

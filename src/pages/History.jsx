@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext";
 import { fetchTransactionHistory } from "../services/api";
 import TransactionItem from "../components/TransactionItem";
-import styles from "../styles/History.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import ScheduleIcon from "@mui/icons-material/Schedule";
@@ -670,22 +669,24 @@ const History = () => {
   useEffect(() => {
     loadPage();
   }, []);
-  const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
+
+  const handleSearchChange = (e) => setSearchTerm(e.target.value);
 
   useEffect(() => {
-    if(searchTerm){
-        let finaldata = transactions.filter(
-      (tx) =>
-        tx.status && tx.status.toLowerCase().includes(searchTerm.toLowerCase()) || 
-      (tx.service_ref_id &&
-      tx.service_ref_id.toString().toLowerCase().includes(searchTerm.toLowerCase()))
-    );
-    console.log("filTrans", finaldata)
-    setTransactions(finaldata);
-    }else{
-      setTransactions(dupdata)
+    if (searchTerm) {
+      const filtered = transactions.filter(
+        (tx) =>
+          (tx.status &&
+            tx.status.toLowerCase().includes(searchTerm.toLowerCase())) ||
+          (tx.service_ref_id &&
+            tx.service_ref_id
+              .toString()
+              .toLowerCase()
+              .includes(searchTerm.toLowerCase()))
+      );
+      setTransactions(filtered);
+    } else {
+      setTransactions(dupdata);
     }
   }, [searchTerm]);
 
@@ -716,43 +717,61 @@ const History = () => {
     };
 
     const dateStr = `${day}${getOrdinal(day)} ${month} '${year}`;
-
     setSettleTime(`${timeStr}, ${dateStr}`);
   }, []);
 
   return (
-    <div className={styles.wrap}>
-      <div className={styles.headerRow}>
-        <h2>Settlement History</h2>
-        <button className={styles.downloadButton}>Download Statement</button>
-      </div>
-      <div className={styles.searchRow}>
-        <div className={styles.searchBar}>
-          <SearchIcon className={styles.searchIcon} />
-          <input
-            type="text"
-            placeholder="Search"
-            value={searchTerm}
-            onChange={handleSearchChange}
-            className={styles.searchInput}
-          />
-        </div>
-        <FilterListIcon className={styles.filterIcon} />
+    <div className="flex flex-col gap-4 p-4 sm:p-6 md:p-8 lg:p-10 w-full">
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4">
+        <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 break-words">
+          Settlement History
+        </h2>
+        <button className="px-3 sm:px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-sm sm:text-base w-full sm:w-auto text-center">
+          Download Statement
+        </button>
       </div>
 
-      <div className={styles.scheduleRow}>
-        <ScheduleIcon className={styles.icon} />
-        <span className={styles.scheduleText}>
-          Today's total collection will be auto-settled by{" "}
-          <strong>{settleTime}</strong> Tomorrow.
-        </span>
-        <button className={styles.settleNow} onClick={() => setOpen(true)}>
-          <TimerOutlinedIcon className={styles.timerIcon} />
+      {/* Search Bar & Filter (same line on mobile) */}
+      <div className="flex items-center gap-2 w-full">
+        <div className="flex items-center flex-1 bg-gray-100 rounded-lg px-3 py-2">
+          <SearchIcon className="text-gray-500 mr-2" />
+          <input
+            type="text"
+            placeholder="Search by Status or Ref ID"
+            value={searchTerm}
+            onChange={handleSearchChange}
+            className="w-full bg-transparent focus:outline-none text-sm sm:text-base"
+          />
+        </div>
+        <button className="flex-shrink-0 p-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition">
+          <FilterListIcon className="text-gray-500" />
+        </button>
+      </div>
+
+      {/* Schedule Info */}
+      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 items-start sm:items-center bg-gray-50 p-3 rounded-lg border border-gray-200 text-sm sm:text-base">
+        <div className="flex items-start sm:items-center gap-2 flex-1 text-gray-700">
+          <ScheduleIcon className="text-gray-500 mt-0.5 sm:mt-0" />
+          <span>
+            Today's total collection will be auto-settled by{" "}
+            <strong>{settleTime}</strong> Tomorrow.
+          </span>
+        </div>
+        <button
+          className="flex items-center gap-1 bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition text-sm sm:text-base w-full sm:w-auto justify-center"
+          onClick={() => setOpen(true)}
+        >
+          <TimerOutlinedIcon className="!w-4 !h-4 sm:!w-5 sm:!h-5" />
           Settle Now!
         </button>
         <SettlementPopup open={open} onClose={() => setOpen(false)} />
       </div>
-      <TransactionItem data={transactions} searchTerm={searchTerm} />
+
+      {/* Transaction List */}
+      <div className="w-full overflow-x-auto">
+        <TransactionItem data={transactions} searchTerm={searchTerm} />
+      </div>
     </div>
   );
 };

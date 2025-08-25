@@ -1,263 +1,130 @@
-.wrap {
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  flex: 0 1 auto;
+}
+
+.logo img {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+}
+
+.rightItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.profileIcon {
+  font-size: 28px;
+  color: #374151;
+  line-height: 1;
+}
+
+.rightText {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: clamp(0.75rem, 2vw, 2rem);
-  box-sizing: border-box;
-  max-width: 100vw;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.1;
 }
 
-.headerRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-h2 {
-  font-size: clamp(1rem, 2.5vw, 1.75rem);
-  margin: 0;
-  font-weight: 600;
-  flex: 1 1 auto;
-}
-
-.downloadButton {
-  color: #0f7c42;
-  border: 1.5px solid #0f7c42;
-  background-color: white;
-  padding: clamp(0.4rem, 1vw, 0.7rem) clamp(0.75rem, 2vw, 1.2rem);
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: clamp(0.75rem, 1vw, 0.9rem);
+.style {
+  font-size: 12px;
+  color: #6b7280;
   white-space: nowrap;
-  font-weight: 500;
 }
 
-.searchRow {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.searchBar {
-  display: flex;
-  align-items: center;
-  flex: 1;
-  background-color: #ffffff;
-  padding: 0.4rem 0.75rem;
-  border-radius: 0.5rem;
-  min-width: 150px;
-}
-
-.searchIcon {
-  margin-right: 0.5rem;
-  color: gray;
-}
-
-.searchInput {
-  border: none;
-  background: transparent;
-  flex: 1;
-  outline: none;
-  font-size: clamp(0.8rem, 1vw, 1rem);
-  min-width: 60px;
-}
-
-.filterIcon {
-  font-size: clamp(20px, 3vw, 32px);
-  cursor: pointer;
-  background-color: #0f7c42;
-  border-radius: 5px;
-  color: white;
-  padding: 4px;
-}
-
-.scheduleRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 1rem 0;
-  padding: 1rem;
-  border: 1px solid rgb(0, 128, 0);
-  border-radius: 8px;
-  background: rgb(231, 248, 231);
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.scheduleText {
-  flex: 1;
-  margin: 0 8px;
-  font-size: clamp(0.75rem, 1vw, 0.95rem);
-  color: #666;
-  font-weight: 500;
-}
-
-strong {
-  color: #0f7c42;
+.userName {
+  font-size: 13px;
   font-weight: 600;
-}
-
-.icon {
-  color: #0f7c42;
-}
-
-.settleNow {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: #0f7c42;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.9rem, 2vw, 1.2rem);
-  font-size: clamp(0.75rem, 1vw, 0.9rem);
-  cursor: pointer;
+  color: #111827;
   white-space: nowrap;
-  font-weight: 500;
-  transition: background 0.3s ease;
 }
 
-.settleNow:hover {
-  background: #0c6133;
+.dropdownIcon {
+  font-size: 12px;
+  color: #6b7280;
 }
 
-.timerIcon {
-  font-size: clamp(14px, 2vw, 18px);
-}
-
-.tableWrap {
-  background: white;
-  border-radius: 10px;
-  overflow-x: auto;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 500px;
-}
-
-th,
-td {
-  text-align: left;
-  padding: clamp(8px, 1vw, 12px) clamp(10px, 1.2vw, 14px);
-  font-size: clamp(0.75rem, 1vw, 0.9rem);
-  border-bottom: 1px solid #eee;
-}
-
-th {
-  background: #f5f5f5;
-  font-weight: 600;
-}
-
-tr:hover td {
-  background: #fafafa;
-}
-
-.viewButton {
-  background: #2196f3;
-  color: white;
-  padding: 4px 10px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.viewButton:hover {
-  background: #1976d2;
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  gap: 0.4rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-}
-
-.pagination button {
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  background: white;
-  cursor: pointer;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.pagination button.active {
-  background: #2196f3;
-  color: white;
-  border-color: #2196f3;
-}
-
-.pagination button:hover:not(.active) {
-  background: #f0f0f0;
-}
-
-.info,
-.error {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-}
-
-.error {
-  color: red;
-}
-@media (max-width: 480px) {
-  .headerRow {
-    flex-direction: column;
-    align-items: flex-start;
+@media (max-width: 380px) {
+  .rightText {
+    display: none;
   }
-  .downloadButton {
-    width: 100%;
-    text-align: center;
+  .profileIcon {
+    font-size: 26px;
   }
-  .searchRow {
-    flex-direction: column;
-    align-items: stretch;
+  .dropdownIcon {
+    font-size: 12px;
   }
-  .filterIcon {
-    align-self: flex-end;
+  .header {
+    padding: 10px 10px;
   }
-  .scheduleRow {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .settleNow {
-    width: 100%;
-    justify-content: center;
+  .logo img {
+    height: 26px;
   }
 }
-@media (max-width: 360px) {
-  .scheduleText {
-    font-size: 0.7rem;
+
+@media (min-width: 381px) {
+  .logo img {
+    height: 30px;
   }
-  th, td {
-    font-size: 0.7rem;
-    padding: 6px 8px;
+  .profileIcon {
+    font-size: 30px;
   }
-  .settleNow {
-    font-size: 0.7rem;
-    padding: 6px 10px;
+  .dropdownIcon {
+    font-size: 13px;
   }
 }
+
+@media (min-width: 640px) {
+  .header {
+    padding: 12px 16px;
+  }
+  .logo img {
+    height: 34px;
+  }
+  .profileIcon {
+    font-size: 32px;
+  }
+  .style {
+    font-size: 13px;
+  }
+  .userName {
+    font-size: 14px;
+  }
+  .dropdownIcon {
+    font-size: 14px;
+  }
+}
+
 @media (min-width: 1024px) {
-  .wrap {
-    padding: 2rem 3rem;
+  .header {
+    padding: 14px 24px;
   }
-  h2 {
-    font-size: 1.8rem;
+  .logo img {
+    height: 40px;
   }
-  .scheduleText {
-    font-size: 1rem;
+  .profileIcon {
+    font-size: 36px;
+  }
+  .dropdownIcon {
+    font-size: 15px;
   }
 }
